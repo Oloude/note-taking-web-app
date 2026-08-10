@@ -6,7 +6,7 @@ type UseNoteApp = {
 };
 
 const useNoteApp = create<UseNoteApp>((set) => ({
-  theme: "light",
+  theme: "dark",
   handleThemeChange: (theme) => set({ theme: theme }),
 }));
 

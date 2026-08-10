@@ -60,4 +60,6 @@
 
   --shadow-small : 0 4px 6px 0 rgba(240, 240, 240, 0.6);
   --shadow-large : 0 8px 12px 0 rgba(240, 240, 240, 0.6);
+  --shadow-top : 0 -4px 6px 0 rgba(240, 240, 240, 0.6);
+  --shadow-topD : 0 -5px 6px 0 rgba(0,0,0,0.5);
 }
