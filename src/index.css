@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  --font-inter: "Inter", sans-serif;
+  --font-noto: "Noto Serif", serif;
+  --font-sourceCode: "Source Code Pro", monospace;
+
+  --color-neutral950: #0e121b;
+  --color-neutral900: #191b25;
+  --color-neutral800: #232530;
+  --color-neutral700: #2b303b;
+  --color-neutral600: #525866;
+  --color-neutral500: #717784;
+  --color-neutral400: #99a0ae;
+  --color-neutral300: #cacfd8;
+  --color-neutral200: #e0e4ea;
+  --color-neutral100: #f3f5f8;
+  --color-neutral50: #f5f7fa;
+  --color-neutral0: #ffffff;
+  --color-blue700: #2547d0;
+  --color-blue500: #335cff;
+  --color-blue50: #ebf1ff;
+  --color-green500: #21c16b;
+  --color-green100: #d1fbe9;
+  --color-red500: #fb3748;
+  --color-red100: #ffd5d8;
+
+  --text-preset1: 24px;
+  --text-preset1--line-height: 120%; 
+  --text-preset1--letter-spacing: -0.5px; 
+  --text-preset1--font-weight: 700; 
+
+  --text-preset2: 20px;
+  --text-preset2--line-height: 120%; 
+  --text-preset2--letter-spacing: -0.5px; 
+  --text-preset2--font-weight: 700; 
+
+  --text-preset3: 16px;
+  --text-preset3--line-height: 120%; 
+  --text-preset3--letter-spacing: -0.3px; 
+  --text-preset3--font-weight: 600; 
+
+  --text-preset4: 14px;
+  --text-preset4--line-height: 120%; 
+  --text-preset4--letter-spacing: -0.2px; 
+  --text-preset4--font-weight: 500; 
+
+  --text-preset5: 14px;
+  --text-preset5--line-height: 120%; 
+  --text-preset5--letter-spacing: -0.2px; 
+  --text-preset5--font-weight: 400; 
+
+  --text-preset6: 12px;
+  --text-preset6--line-height: 120%; 
+  --text-preset6--letter-spacing: -0.2px; 
+  --text-preset6--font-weight: 400; 
+
+  --shadow-small : 0 4px 6px 0 rgba(240, 240, 240, 0.6);
+  --shadow-large : 0 8px 12px 0 rgba(240, 240, 240, 0.6);
+}
