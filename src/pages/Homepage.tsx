@@ -26,7 +26,7 @@ function Homepage() {
           ))}
         </div>
       )}
-      <button className="w-16 h-16 fixed bg-blue500 z-4 bottom-16 right-4 rounded-full flex items-center justify-center shadow-btn"><GoPlus className="w-5 h-5 text-white" /></button>
+      <button className="w-12 h-12 md:w-16 md:h-16 fixed bg-blue500 z-4 bottom-16 right-4 rounded-full flex items-center justify-center shadow-btn"><GoPlus className="w-5 h-5 text-white" /></button>
     </div>
   );
 }
