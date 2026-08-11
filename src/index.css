@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
 @import "tailwindcss";
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
@@ -7,6 +7,8 @@
   --font-inter: "Inter", sans-serif;
   --font-noto: "Noto Serif", serif;
   --font-sourceCode: "Source Code Pro", monospace;
+
+  --breakpoint-lg: 90rem;
 
   --color-neutral950: #0e121b;
   --color-neutral900: #191b25;
@@ -29,37 +31,39 @@
   --color-red100: #ffd5d8;
 
   --text-preset1: 24px;
-  --text-preset1--line-height: 120%; 
-  --text-preset1--letter-spacing: -0.5px; 
-  --text-preset1--font-weight: 700; 
+  --text-preset1--line-height: 120%;
+  --text-preset1--letter-spacing: -0.5px;
+  --text-preset1--font-weight: 700;
 
   --text-preset2: 20px;
-  --text-preset2--line-height: 120%; 
-  --text-preset2--letter-spacing: -0.5px; 
-  --text-preset2--font-weight: 700; 
+  --text-preset2--line-height: 120%;
+  --text-preset2--letter-spacing: -0.5px;
+  --text-preset2--font-weight: 700;
 
   --text-preset3: 16px;
-  --text-preset3--line-height: 120%; 
-  --text-preset3--letter-spacing: -0.3px; 
-  --text-preset3--font-weight: 600; 
+  --text-preset3--line-height: 120%;
+  --text-preset3--letter-spacing: -0.3px;
+  --text-preset3--font-weight: 600;
 
   --text-preset4: 14px;
-  --text-preset4--line-height: 120%; 
-  --text-preset4--letter-spacing: -0.2px; 
-  --text-preset4--font-weight: 500; 
+  --text-preset4--line-height: 120%;
+  --text-preset4--letter-spacing: -0.2px;
+  --text-preset4--font-weight: 500;
 
   --text-preset5: 14px;
-  --text-preset5--line-height: 120%; 
-  --text-preset5--letter-spacing: -0.2px; 
-  --text-preset5--font-weight: 400; 
+  --text-preset5--line-height: 120%;
+  --text-preset5--letter-spacing: -0.2px;
+  --text-preset5--font-weight: 400;
 
   --text-preset6: 12px;
-  --text-preset6--line-height: 120%; 
-  --text-preset6--letter-spacing: -0.2px; 
-  --text-preset6--font-weight: 400; 
+  --text-preset6--line-height: 120%;
+  --text-preset6--letter-spacing: -0.2px;
+  --text-preset6--font-weight: 400;
 
-  --shadow-small : 0 4px 6px 0 rgba(240, 240, 240, 0.6);
-  --shadow-large : 0 8px 12px 0 rgba(240, 240, 240, 0.6);
-  --shadow-top : 0 -4px 6px 0 rgba(240, 240, 240, 0.6);
-  --shadow-topD : 0 -5px 6px 0 rgba(0,0,0,0.5);
+  --shadow-small: 0 4px 6px 0 rgba(240, 240, 240, 0.6);
+  --shadow-large: 0 8px 12px 0 rgba(240, 240, 240, 0.6);
+  --shadow-top: 0 -4px 6px 0 rgba(240, 240, 240, 0.6);
+  --shadow-topD: 0 -5px 6px 0 rgba(0, 0, 0, 0.5);
+  --shadow-search : 0 1px 2px 0 rgba(10, 13, 20, 0.03);
+  --shadow-btn: 0 7px 11px 0 rgba(202, 207, 216, 0.7);
 }
