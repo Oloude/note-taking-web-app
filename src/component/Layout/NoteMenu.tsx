@@ -1,4 +1,5 @@
 import useNoteApp from "../../AppState";
+import formatDate from '../../utils/formatDate'
 
 function NoteMenu() {
     const notes = useNoteApp(state => state.notes)
@@ -8,16 +9,16 @@ function NoteMenu() {
           + Create New Note
         </button>
         {notes.length === 0 ? <div className="bg-neutral100 border border-neutral200 rounded-lg p-2 text-preset5 text-neutral950">You don’t have any notes yet. Start a new note to capture your thoughts and ideas.</div>
-        : <div className="flex flex-col gap-4 overflow-y-auto">
+        : <div className="flex flex-col gap-4 overflow-y-auto divide-y divide-neutral200">
             {
-                notes.map(note => <div key={note.title}>
-                    <h3>{note.title}</h3>
-                    <div className="flex items-center gap-2">
+                notes.map(note => <div key={note.title} className="p-2 flex flex-col gap-3">
+                    <h3 className="text-neutral950 text-preset3">{note.title}</h3>
+                    <div className="flex items-center gap-1">
                         {
-                            note.tags.map(tag => <div key={tag}>{tag}</div>)
+                            note.tags.map(tag => <div key={tag} className="bg-neutral200 rounded py-0.5 px-1.5 text-neutral950 text-preset6">{tag}</div>)
                         }
                     </div>
-                    <span>{note.lastEdited}</span>
+                    <span className="text-preset6 text-neutral700">{formatDate(note.lastEdited)}</span>
                 </div>)
             }
             </div>}

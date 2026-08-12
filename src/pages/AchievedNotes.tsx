@@ -6,7 +6,7 @@ import { RiDeleteBinLine } from "react-icons/ri";
 import { PiBoxArrowDown } from "react-icons/pi";
 import { TbTag } from "react-icons/tb";
 
-function Homepage() {
+function AchievedNotes() {
   const notes = useNoteApp((state) => state.notes);
   const handleSelectedNote = useNoteApp((state) => state.handleSelectedNote);
   const selectedNoteTitle = useNoteApp((state) => state.selectedNote);
@@ -15,6 +15,7 @@ function Homepage() {
     (state) => state.handleIsCreatingNewNote,
   );
 
+  let achievedNotes = notes.filter((note) => note.isArchived);
   let selectedNote = notes.find((note) => note.title === selectedNoteTitle);
 
   return (
@@ -79,15 +80,21 @@ function Homepage() {
           {selectedNoteTitle === null ? (
             <div>
               {" "}
-              <h1 className="text-neutral950 text-preset1">All Notes</h1>
-              {notes.length === 0 ? (
-                <div className="bg-neutral100 border border-neutral200 rounded-lg p-2 text-preset5 text-neutral950">
-                  You don’t have any notes yet. Start a new note to capture your
-                  thoughts and ideas.
+              <h1 className="text-neutral950 text-preset1">Archived Notes</h1>
+              {achievedNotes.length === 0 ? (
+                <div className="flex flex-col gap-4">
+                  <p className="text-preset5 text-neutral700">
+                    All your archived notes are stored here. You can restore or
+                    delete them anytime.
+                  </p>
+                  <div className="bg-neutral100 border border-neutral200 rounded-lg p-2 text-preset5 text-neutral950">
+                    No notes have been archived yet. Move notes here for
+                    safekeeping, or <span>create a new note.</span>
+                  </div>
                 </div>
               ) : (
                 <div className="flex flex-col gap-4 overflow-y-auto divide-y divide-neutral200">
-                  {notes.map((note) => (
+                  {achievedNotes.map((note) => (
                     <div
                       onClick={() => handleSelectedNote(note.title)}
                       key={note.title}
@@ -178,4 +185,4 @@ function Homepage() {
   );
 }
 
-export default Homepage;
+export default AchievedNotes;
