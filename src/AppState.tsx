@@ -14,9 +14,11 @@ type UseNoteApp = {
   notes: Note[];
   selectedNote : string | null;
   isCreatingNewNote : boolean;
+  selectedTag : string | null;
   handleThemeChange: (theme: string) => void;
   handleSelectedNote : (title :string | null) => void;
   handleIsCreatingNewNote : () => void;
+  handleSelectedTag : (title :string | null) => void;
 };
 
 const useNoteApp = create<UseNoteApp>((set) => ({
@@ -24,9 +26,11 @@ const useNoteApp = create<UseNoteApp>((set) => ({
   notes: data.notes,
   selectedNote : null,
   isCreatingNewNote : false,
+  selectedTag : null,
   handleThemeChange: (theme) => set({ theme: theme }),
   handleSelectedNote :(title ) => set({ selectedNote : title}),
-  handleIsCreatingNewNote : () => set(state => ({isCreatingNewNote : !state.isCreatingNewNote}))
+  handleIsCreatingNewNote : () => set(state => ({isCreatingNewNote : !state.isCreatingNewNote})),
+  handleSelectedTag :(tag ) => set({ selectedTag : tag}),
 }));
 
 export default useNoteApp;

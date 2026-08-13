@@ -4,7 +4,7 @@ import formatDate from "../utils/formatDate";
 import { IoIosArrowBack } from "react-icons/io";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { PiBoxArrowDown } from "react-icons/pi";
-import { TbTag } from "react-icons/tb";
+import { TbLoader4, TbTag } from "react-icons/tb";
 
 function Homepage() {
   const notes = useNoteApp((state) => state.notes);
@@ -77,7 +77,7 @@ function Homepage() {
         <div>
           {" "}
           {selectedNoteTitle === null ? (
-            <div>
+            <div className="flex flex-col gap-4">
               {" "}
               <h1 className="text-neutral950 text-preset1">All Notes</h1>
               {notes.length === 0 ? (
@@ -86,12 +86,12 @@ function Homepage() {
                   thoughts and ideas.
                 </div>
               ) : (
-                <div className="flex flex-col gap-4 overflow-y-auto divide-y divide-neutral200">
+                <div className="flex flex-col gap-1 overflow-y-auto divide-y divide-neutral200">
                   {notes.map((note) => (
                     <div
                       onClick={() => handleSelectedNote(note.title)}
                       key={note.title}
-                      className="p-2 flex flex-col gap-3 rounded-md"
+                      className="p-2 flex flex-col gap-3 rounded-md hover:bg-neutral100 transition-all"
                     >
                       <h3 className="text-neutral950 text-preset3">
                         {note.title}
@@ -157,6 +157,15 @@ function Homepage() {
                     {selectedNote?.tags.join(", ")}
                   </p>
                 </div>
+                {selectedNote?.isArchived && (
+                  <div className="flex items-center  gap-10">
+                    {" "}
+                    <p className="text-preset6 text-neutral700 flex items-center gap-2">
+                      <TbLoader4 className="w-4 h-4" /> Status
+                    </p>{" "}
+                    <p className="text-preset6 text-neutral700">Archived</p>
+                  </div>
+                )}
                 <div className="flex items-center  gap-10">
                   {" "}
                   <p className="text-preset6 text-neutral700 flex items-center gap-2">

@@ -4,7 +4,7 @@ import formatDate from "../utils/formatDate";
 import { IoIosArrowBack } from "react-icons/io";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { PiBoxArrowDown } from "react-icons/pi";
-import { TbTag } from "react-icons/tb";
+import { TbLoader4, TbTag } from "react-icons/tb";
 
 function AchievedNotes() {
   const notes = useNoteApp((state) => state.notes);
@@ -59,6 +59,7 @@ function AchievedNotes() {
                 className="text-preset6 text-neutral400 w-full outline-none"
               />
             </div>
+            
             <div className="flex items-center  gap-10">
               {" "}
               <p className="text-preset6 text-neutral700 flex items-center gap-2">
@@ -78,7 +79,7 @@ function AchievedNotes() {
         <div>
           {" "}
           {selectedNoteTitle === null ? (
-            <div>
+            <div className="flex flex-col gap-4">
               {" "}
               <h1 className="text-neutral950 text-preset1">Archived Notes</h1>
               {achievedNotes.length === 0 ? (
@@ -98,7 +99,7 @@ function AchievedNotes() {
                     <div
                       onClick={() => handleSelectedNote(note.title)}
                       key={note.title}
-                      className="p-2 flex flex-col gap-3 rounded-md"
+                      className="p-2 flex flex-col gap-3 rounded-md hover:bg-neutral100 transition-all"
                     >
                       <h3 className="text-neutral950 text-preset3">
                         {note.title}
@@ -162,6 +163,15 @@ function AchievedNotes() {
                   </p>{" "}
                   <p className="text-preset6 text-neutral700">
                     {selectedNote?.tags.join(", ")}
+                  </p>
+                </div> 
+                <div className="flex items-center  gap-10">
+                  {" "}
+                  <p className="text-preset6 text-neutral700 flex items-center gap-2">
+                    <TbLoader4 className="w-4 h-4" /> Status
+                  </p>{" "}
+                  <p className="text-preset6 text-neutral700">
+                    Archived
                   </p>
                 </div>
                 <div className="flex items-center  gap-10">

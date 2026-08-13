@@ -4,6 +4,8 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import AppLayout from "./component/Layout/AppLayout";
 import Homepage from "./pages/Homepage";
 import AchievedNotes from "./pages/AchievedNotes";
+import Tags from "./pages/Tags";
+import Search from "./pages/Search";
 
 function App() {
   const theme = useNoteApp((state) => state.theme);
@@ -21,6 +23,8 @@ function App() {
         <Route element={<AppLayout />}>
           <Route path='/' element={<Homepage/>}/>
           <Route path='/achieved' element={<AchievedNotes/>}/>
+          <Route path='/tags' element={<Tags/>}/>
+          <Route path='/search' element={<Search/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
