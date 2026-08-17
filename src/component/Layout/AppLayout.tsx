@@ -4,10 +4,20 @@ import MobileHeader from "./MobileHeader";
 import Sidebar from "./Sidebar";
 import DesktopHeader from "./DesktopHeader";
 import NoteMenu from "./NoteMenu";
+import useNoteApp from "../../AppState";
 
 function AppLayout() {
+  const selectedFont = useNoteApp((state) => state.selectedFont);
   return (
-    <div className={`font-inter`}>
+    <div
+      className={`${
+        selectedFont === "Sans-serif"
+          ? "font-inter"
+          : selectedFont === "Serif"
+            ? "font-noto"
+            : "font-sourceCode"
+      }`}
+    >
       <div className="h-screen flex flex-col lg:hidden">
         <MobileHeader />
         <main className="overflow-y-auto flex-1 bg-neutral0 dark:bg-neutral950">

@@ -12,21 +12,18 @@ function App() {
   const theme = useNoteApp((state) => state.theme);
 
   useEffect(() => {
-    document.documentElement.setAttribute(
-      "data-theme",
-      theme === "dark" ? "dark" : "light",
-    );
+    document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
 
   return (
     <BrowserRouter>
       <Routes>
         <Route element={<AppLayout />}>
-          <Route path='/' element={<Homepage/>}/>
-          <Route path='/achieved' element={<AchievedNotes/>}/>
-          <Route path='/tags' element={<Tags/>}/>
-          <Route path='/search' element={<Search/>}/>
-          <Route path='/settings' element={<Setting/>}/>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/achieved" element={<AchievedNotes />} />
+          <Route path="/tags" element={<Tags />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/settings" element={<Setting />} />
         </Route>
       </Routes>
     </BrowserRouter>
